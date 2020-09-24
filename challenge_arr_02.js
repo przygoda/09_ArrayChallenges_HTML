@@ -1,0 +1,3 @@
+
+/* Vorüberlegungen */
+// push() / pop()
