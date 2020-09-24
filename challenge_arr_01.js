@@ -9,7 +9,7 @@ Verwenden Sie dafür die untenstehenden Arrays
 */
 
 let controls = ["<",">","/"];
-let tags = ["html","head","head","body","h1","h1","p","p","body","html"];
+let tags = ["html","head","head","body","h1","h1","p","p","p","p","body","html"];
  // Ziel --> "<html><head></head><body><p></p></body></html>"; 
 
 ausgabe(getHTML());
@@ -18,7 +18,7 @@ function getHTML() {
     let htmlStr = "";
 
     for (let i = 0; i < tags.length; i++) {
-        if (isOpenTag()) {// ???
+        if (isOpenTag(i)) {// ???
             htmlStr += getTag(tags[i],"open");
         } else {
             htmlStr += getTag(tags[i],"close");
@@ -28,8 +28,13 @@ function getHTML() {
     return htmlStr;
 }
 
-function isOpenTag(params) {
-    return false;
+// Modul: // erscheint das tag zum ersten mal ? --> true/false
+/*ausgabe(isOpenTag(0));
+ausgabe(isOpenTag(1));
+ausgabe(isOpenTag(2));*/
+function isOpenTag(index) {
+   //return index + " : " + tags.indexOf(tags[index]); // Vorüberlegung
+   return tags.indexOf(tags[index]) == index;
 }
 
 // Modul: Zusammenbau: <tagStr> --> Tests:
